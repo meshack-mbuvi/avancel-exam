@@ -5,7 +5,7 @@ import { Container, Col, Row } from 'react-bootstrap';
 
 // user defined components
 import Sidebar from './Sidebar';
-// import Main from './Main';
+import Main from './Main';
 
 export default function index() {
   return (
@@ -15,7 +15,7 @@ export default function index() {
           <Sidebar />
         </Col>
         <Col md={10} xs={12} className='main'>
-          {/* <Main /> */}
+          <Main />
         </Col>
       </Row>
     </Container>
