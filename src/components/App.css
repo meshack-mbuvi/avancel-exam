@@ -1,0 +1,58 @@
+body {
+  height: 100vh;
+  color: #d8d9d9;
+}
+.row {
+}
+
+.sidebar {
+  background: #1c1d20;
+  height: 100vh;
+}
+.main {
+  background: #22252a;
+}
+
+.small-text {
+  font-size: 11px !important;
+  color: #414446;
+}
+
+.card {
+  background: transparent;
+  border: none;
+  font-weight: normal !important;
+}
+
+.card-title {
+  margin: 0;
+  color: #a9a9ab;
+  font-size: 0.9rem;
+}
+
+.card-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.CircularProgressbar {
+  width: 70% !important;
+  vertical-align: middle;
+  margin-top: 2rem;
+}
+.CircularProgressbar .CircularProgressbar-text {
+  fill: white !important;
+  font-size: 20px;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: #292a2c;
+  stroke-linecap: round;
+}
+
+hr {
+  background: #45433d !important;
+}
+
+.medium-text {
+  font-size: medium;
+}
