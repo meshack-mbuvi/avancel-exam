@@ -2,11 +2,24 @@ import React from 'react';
 import { Line } from 'react-chartjs-2';
 
 const ChartComponent = () => {
-  const legend = {
-    display: false,
-    position: 'top',
-    labels: {
-      fontSize: 14,
+  const options = {
+    legend: { display: false },
+    title: {
+      display: true,
+      text:
+        'Number of portable Media Players Sold WorldWide each year from 2006 to 2011',
+
+      fontColor: 'white',
+    },
+    scales: {
+      yAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: 'Number sold(millions)',
+          },
+        },
+      ],
     },
   };
 
@@ -14,33 +27,16 @@ const ChartComponent = () => {
     labels: [2015, 2016, 2017, 2018],
     datasets: [
       {
-        label: 'Rainfall',
+        label: 'Number sold(millions)',
         fill: false,
-        lineTension: 0.5,
-        backgroundColor: 'rgba(75,192,192,1)',
-        borderColor: 'rgba(0,0,0,1)',
+        lineTension: 0,
+        borderColor: '#f7f7f7',
         borderWidth: 2,
-        data: [65, 59, 80, 81, 56],
+        data: [35, 60, 40, 70],
       },
     ],
   };
-  return (
-    <Line
-      data={data}
-      legend={legend}
-      options={{
-        title: {
-          display: true,
-          text: 'Average Rainfall per month',
-          fontSize: 20,
-        },
-        legend: {
-          display: true,
-          position: 'right',
-        },
-      }}
-    />
-  );
+  return <Line data={data} options={options} />;
 };
 
 export default ChartComponent;

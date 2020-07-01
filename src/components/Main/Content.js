@@ -4,6 +4,7 @@ import { Card, Row, Col } from 'react-bootstrap';
 // custom defined components
 import Header from './Header';
 import Chart from './Chart';
+import Tag from './Tags'
 
 const Content = () => {
   return (
@@ -26,10 +27,6 @@ const Content = () => {
 
               <Card>
                 <Card.Body>
-                  <p className='medium-text justify-content-center'>
-                    Number of portable Media Players Sold WorldWide each year
-                    from 2006 to 2011
-                  </p>
                   <Chart />
                 </Card.Body>
               </Card>

@@ -5,8 +5,11 @@ export default function Header() {
   return (
     <Card.Title>
       <Row>
-        <Col lg={12}>
-          <p>Algebra . Real Problem</p>
+        <Col md={1} sm={12} className='justify-content-center'>
+          <i class='fa fa-calculator'></i>
+        </Col>
+        <Col md={11} sm={12} className='justify-content-center'>
+          <p className='header '>Algebra . Real Problem</p>
         </Col>
       </Row>
     </Card.Title>
