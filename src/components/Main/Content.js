@@ -4,7 +4,7 @@ import { Card, Row, Col } from 'react-bootstrap';
 // custom defined components
 import Header from './Header';
 import Chart from './Chart';
-import Tag from './Tags'
+import Tag from './Tags';
 
 const Content = () => {
   return (
@@ -30,6 +30,18 @@ const Content = () => {
                   <Chart />
                 </Card.Body>
               </Card>
+              <Row>
+                <Col md={2} sm={1} xs={4}>
+                  <Tag value={'Tag A'} className={'blue'} />
+                </Col>
+                <Col md={2} sm={1} xs={4}>
+                  <Tag value={'Tag B'} className={'light-gray'} />
+                </Col>
+                <Col md={4} sm={1} xs={4}>
+                  <Tag value={'Tag C'} className={'dark-gray'} />
+                </Col>
+              </Row>
+              {/* <Tag value={'Tag B'} className={'blue'} /> */}
             </Col>
             <Col lg={6} sm={12}>
               {/* right section */}

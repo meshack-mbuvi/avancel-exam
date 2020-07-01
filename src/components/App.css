@@ -2,12 +2,9 @@ body {
   height: 100vh;
   color: #d8d9d9;
 }
-.row {
-}
 
 .sidebar {
   background: #1c1d20;
-  height: 100vh;
 }
 .main {
   background: #22252a;
@@ -59,4 +56,32 @@ hr {
 
 .header {
   color: #ecac05;
+}
+
+.badge {
+  width: 60px;
+}
+
+.blue {
+  background: linear-gradient(
+    90deg,
+    rgba(19, 154, 217, 1) 0%,
+    rgba(94, 218, 223, 1) 100%
+  );
+}
+
+.light-gray {
+  background: linear-gradient(
+    90deg,
+    rgba(38, 103, 132, 1) 0%,
+    rgba(61, 125, 132, 1) 100%
+  );
+}
+
+.dark-gray {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 59, 76, 1) 0%,
+    rgba(45, 72, 77, 1) 100%
+  );
 }
