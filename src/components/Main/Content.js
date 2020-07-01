@@ -1,35 +1,9 @@
 import React from 'react';
 import { Card, Row, Col } from 'react-bootstrap';
-import { Line } from 'react-chartjs-2';
 
 // custom defined components
 import Header from './Header';
 import Chart from './Chart';
-
-const ChartComponent = () => {
-  const legend = {
-    display: true,
-    position: 'top',
-    labels: {
-      fontSize: 14,
-    },
-  };
-
-  const data = {
-    labels: [2014, 2015, 2016, 2017, 2018],
-    datasets: [
-      {
-        label:
-          'Number of portable Media Players Sold WorldWide each year from 2006 to 2011',
-        data: ['', 35, 60, 40, 70],
-        fill: false,
-        backgroundColor: 'rgba(75,192,192,0.2)',
-        borderColor: 'rgba(75,192,192,1)',
-      },
-    ],
-  };
-  return <Line data={data} legend={legend} />;
-};
 
 const Content = () => {
   return (
@@ -49,13 +23,16 @@ const Content = () => {
                 meet or exceed the recommended daily calcium intake from these
                 drinks alone?
               </p>
-              <Chart
-                title={
-                  'Number of portable Media Players Sold WorldWide each year from 2006 to 2011'
-                }
-                data={}
-              />
-              <ChartComponent />
+
+              <Card>
+                <Card.Body>
+                  <p className='medium-text justify-content-center'>
+                    Number of portable Media Players Sold WorldWide each year
+                    from 2006 to 2011
+                  </p>
+                  <Chart />
+                </Card.Body>
+              </Card>
             </Col>
             <Col lg={6} sm={12}>
               {/* right section */}

@@ -1,59 +1,46 @@
-import * as am4core from '@amcharts/amcharts4/core';
-import * as am4charts from '@amcharts/amcharts4/charts';
-import am4themes_animated from '@amcharts/amcharts4/themes/animated';
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Line } from 'react-chartjs-2';
 
-am4core.useTheme(am4themes_animated);
+const ChartComponent = () => {
+  const legend = {
+    display: false,
+    position: 'top',
+    labels: {
+      fontSize: 14,
+    },
+  };
 
-const Chart = (props) => {
-  useEffect(() => {
-    const { title, data } = props;
-    const chart = am4core.create(title, am4charts.XYChart);
-
-    chart.data = data;
-
-    const categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.dataFields.category = 'date';
-    chart.paddingLeft = 20;
-
-    chart.yAxes.push(new am4charts.ValueAxis());
-
-    const chartTitle = chart.titles.create();
-    chartTitle.text = title;
-    chartTitle.fontSize = 20;
-    chartTitle.marginBottom = 30;
-
-    const series = chart.series.push(new am4charts.LineSeries());
-    series.dataFields.categoryX = 'date';
-    series.dataFields.valueY = 'value';
-
-    series.strokeWidth = 4;
-
-    const circleBullet = new am4charts.CircleBullet();
-    circleBullet.circle.radius = 2;
-    circleBullet.tooltipText = '{valueY}';
-
-    series.bullets.push(circleBullet);
-    series.dy = -0.5;
-
-    chart.legend = new am4charts.Legend();
-    series.legendSettings.labelText = title;
-
-    const scrollbarX = new am4charts.XYChartScrollbar();
-    scrollbarX.series.push(series);
-  }, [props]);
-
+  const data = {
+    labels: [2015, 2016, 2017, 2018],
+    datasets: [
+      {
+        label: 'Rainfall',
+        fill: false,
+        lineTension: 0.5,
+        backgroundColor: 'rgba(75,192,192,1)',
+        borderColor: 'rgba(0,0,0,1)',
+        borderWidth: 2,
+        data: [65, 59, 80, 81, 56],
+      },
+    ],
+  };
   return (
-    <div
-      id={props.title}
-      style={{
-        width: '100%',
-        height: '500px',
-        paddingLeft: '2rem',
-        paddingRight: '4rem',
+    <Line
+      data={data}
+      legend={legend}
+      options={{
+        title: {
+          display: true,
+          text: 'Average Rainfall per month',
+          fontSize: 20,
+        },
+        legend: {
+          display: true,
+          position: 'right',
+        },
       }}
-    ></div>
+    />
   );
 };
 
-export default Chart;
+export default ChartComponent;
